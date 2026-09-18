@@ -24,3 +24,4 @@ console.log(`Resto da Divisao: ${num1} ÷ ${num2} sobra: ${restoDivisao}`);
 console.log(`Soma: ${num1} + ${num2} = ${Math.round(soma)}`);
 console.log(`Subtracao: ${num1} - ${num2} = ${Math.round(subtracao)}`);
 console.log(`Multiplicacao: ${num1} * ${num2} = ${Math.round(multiplicacao)}`);
+0
