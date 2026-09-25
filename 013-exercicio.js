@@ -1,15 +1,15 @@
 let entrada = require('prompt-sync')();
 let cedulas = 0;
 let usuario1 = 'Rodrigo';
-let saldo = 1000;
+let saldo1 = 1000;
 let usuario2 = 'Maria';
 let saldo2 = 500;
-let usuario3 = 'João';
+let usuario3 = "João";
 let saldo3 = 200;
 
-let senha1 = '123456';
-let senha2 = '654321';
-let senha3 = '987654';
+let senha1 = "123456";
+let senha2 = "654321";
+let senha3 = "987654";
 
 let usOK = false;
 let snOK = false;
@@ -17,47 +17,45 @@ let acessoPermitido = false;
 
 let valorDisp = 0;
 
-console.log('Insira seus dados para acessar o sistema!');
+console.log("Insira seus dados para acessar o sistema!");
 
-let loginUsuario = entrada('Nome de usuário: ');
-let loginSenha = entrada('Senha: ');
+let loginUsuario = entrada("Nome de usuário: ");
+let loginSenha = entrada("Senha: ");
 
 if (loginUsuario === usuario1 && loginSenha === senha1) {
-    usOK = true;
-    snOK = true;
-    valorDisp = saldo;
+  usOK = true;
+  snOK = true;
+  valorDisp = saldo1;
 } else if (loginUsuario === usuario2 && loginSenha === senha2) {
-    usOK = true;
-    snOK = true;
-    valorDisp = saldo2;
+  usOK = true;
+  snOK = true;
+  valorDisp = saldo2;
 } else if (loginUsuario === usuario3 && loginSenha === senha3) {
-    usOK = true;
-    snOK = true;
-    valorDisp = saldo3;
+  usOK = true;
+  snOK = true;
+  valorDisp = saldo3;
 }
 
 if (usOK && snOK) {
-    acessoPermitido = true;
+  acessoPermitido = true;
 }
 
 if (acessoPermitido) {
-    console.log('Acesso permitido!');
-    console.log(`Seu saldo é: R$ ${valorDisp}`);
+  console.log("Acesso permitido!");
+  console.log(`Seu saldo é: R$ ${valorDisp}`);
 } else {
-    console.log('Acesso negado!');
+  console.log("Acesso negado!");
 }
-let valorSaque = parseFloat(entrada('Digite o valor que deseja sacar: '));
+let valorSaque = parseFloat(entrada("Digite o valor que deseja sacar: "));
+
 if (valorSaque <= valorDisp) {
     valorDisp -= valorSaque;
-    cedulas = Math.floor(valorSaque/50);
+    cedulas = Math.floor(valorSaque / 50);
     console.log(`Saque realizado com sucesso! Seu saldo atual é: R$ ${valorDisp}`);
-    console.log(`Você recebeu ${cedulas} de 50 reais`);
-}
-else {
+    console.log(`Você recebeu ${cedulas} notas de R$ 50`);
+} else {
     console.log('Saldo insuficiente para realizar o saque!');
 }
-
-
 
 entrada('Pressione enter para finalizar o programa!');
 
