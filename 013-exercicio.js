@@ -1,8 +1,8 @@
-let entrada = require("prompt-sync")();
-
-let usuario1 = "Rodrigo";
+let entrada = require('prompt-sync')();
+let cedulas = 0;
+let usuario1 = 'Rodrigo';
 let saldo1 = 1000;
-let usuario2 = "Maria";
+let usuario2 = 'Maria';
 let saldo2 = 500;
 let usuario3 = "João";
 let saldo3 = 200;
@@ -49,16 +49,13 @@ if (acessoPermitido) {
 let valorSaque = parseFloat(entrada("Digite o valor que deseja sacar: "));
 
 if (valorSaque <= valorDisp) {
-  valorDisp -= valorSaque;
-  console.log(
-    `Saque realizado com sucesso! Seu saldo atual é: R$ ${ValorDisp}`,
-  );
-
-  console.log("Notas de R$ 50: ${Notas50}");
-  console.log("Valor restante em notas menores: R$ ${restante}");
+    valorDisp -= valorSaque;
+    cedulas = Math.floor(valorSaque / 50);
+    console.log(`Saque realizado com sucesso! Seu saldo atual é: R$ ${valorDisp}`);
+    console.log(`Você recebeu ${cedulas} notas de R$ 50`);
 } else {
-  console.log("Saldo insuficiente para realizar o saque!");
-  console.lo;
+    console.log('Saldo insuficiente para realizar o saque!');
 }
 
-entrada("Pressione enter para finalizar o programa!");
+entrada('Pressione enter para finalizar o programa!');
+
