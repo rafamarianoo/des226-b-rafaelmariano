@@ -1,5 +1,6 @@
 let codigoProduto = "B2";
 
+
 switch (codigoProduto) {
     case "A1":
         console.log("Produto: Café");
